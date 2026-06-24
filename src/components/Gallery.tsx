@@ -1,9 +1,9 @@
 import React from 'react';
 
 const images = [
-    '/src/assets/images/gallery_truck_work1_1782247570566.jpg',
-    '/src/assets/images/gallery_truck_work2_1782247587345.jpg',
-    '/src/assets/images/gallery_truck_work3_1782247603278.jpg',
+    'assets/images/gallery_truck_work1_1782247570566.jpg',
+    'assets/images/gallery_truck_work2_1782247587345.jpg',
+    'assets/images/gallery_truck_work3_1782247603278.jpg',
 ];
 
 export default function Gallery() {

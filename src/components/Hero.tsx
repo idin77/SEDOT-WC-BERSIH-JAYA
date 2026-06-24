@@ -21,7 +21,7 @@ export default function Hero() {
           </div>
         </div>
         <div className="md:w-1/2">
-          <img src="/src/assets/hero_truck.jpeg" alt="Mobil Sedot WC Bersih Jaya Karawang" className="rounded-xl shadow-2xl transition-opacity duration-500 opacity-100" loading="eager" width="800" height="600" />
+          <img src="assets/hero_truck.jpeg" alt="Mobil Sedot WC Bersih Jaya Karawang" className="rounded-xl shadow-2xl transition-opacity duration-500 opacity-100" loading="eager" width="800" height="600" />
         </div>
       </div>
     </section>

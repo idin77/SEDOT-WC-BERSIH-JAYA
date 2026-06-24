@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Advantages from './components/Advantages';
@@ -30,8 +31,23 @@ const SECTIONS = {
 
 export default function App() {
   useSectionSEO(SECTIONS);
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      setIsDark(true);
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    const newTheme = !isDark;
+    setIsDark(newTheme);
+    localStorage.setItem('theme', newTheme ? 'dark' : 'light');
+  };
+
   return (
-    <div className="min-h-screen bg-white dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300">
+    <div className={`${isDark ? 'dark' : ''} min-h-screen bg-white dark:bg-gray-900 dark:text-gray-100 transition-colors duration-300`}>
       <Navbar />
       <main>
         <Hero />
@@ -52,7 +68,7 @@ export default function App() {
         <Reveal><Contact /></Reveal>
       </main>
       <Footer />
-      <FloatingWhatsApp />
+      <FloatingWhatsApp isDark={isDark} toggleTheme={toggleTheme} />
     </div>
   );
 }

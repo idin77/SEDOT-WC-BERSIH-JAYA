@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MessageCircle, Phone, FileText, HelpCircle, X, Volume2, VolumeX, Clock, Copy } from 'lucide-react';
+import { MessageCircle, Phone, FileText, HelpCircle, X, Volume2, VolumeX, Clock, Copy, Sun, Moon } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useHoverSound } from '../hooks/useHoverSound';
 
-export default function FloatingWhatsApp() {
+export default function FloatingWhatsApp({ isDark, toggleTheme }: { isDark: boolean, toggleTheme: () => void }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isPulsing, setIsPulsing] = useState(false);
   const [karawangTime, setKarawangTime] = useState('');
@@ -143,6 +143,10 @@ export default function FloatingWhatsApp() {
           <button onClick={toggleMute} onMouseEnter={playSound} className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-sm font-medium w-full text-left">
             {isMuted ? <VolumeX size={16} className="text-blue-950 dark:text-blue-300" /> : <Volume2 size={16} className="text-blue-950 dark:text-blue-300" />}
             {isMuted ? 'Unmute Sound' : 'Mute Sound'}
+          </button>
+          <button onClick={toggleTheme} onMouseEnter={playSound} className="flex items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg text-sm font-medium w-full text-left">
+            {isDark ? <Sun size={16} className="text-blue-950 dark:text-blue-300" /> : <Moon size={16} className="text-blue-950 dark:text-blue-300" />}
+            {isDark ? 'Light Mode' : 'Dark Mode'}
           </button>
           <div className="px-2 pt-2 border-t border-gray-100 dark:border-gray-700">
             {isTyping ? (

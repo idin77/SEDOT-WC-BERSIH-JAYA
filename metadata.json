@@ -1,0 +1,6 @@
+{
+  "name": "Sedot WC Bersih Jaya Karawang",
+  "description": "Professional and reliable septic tank cleaning services.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
